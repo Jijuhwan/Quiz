@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "374134559625-o6fs12ecme4gs6hu6s24di6kj3bt9osc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fire.quiz",
+            "certificate_hash": "bf9129a44296a0046623e50af3ea1db8f789fa00"
+          }
+        },
+        {
           "client_id": "374134559625-n3t8vpk20igvg5gdhuaj4b1pmnthaokl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
