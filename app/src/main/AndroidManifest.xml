@@ -11,16 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2309895749738540~7992386571"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+0
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SoloQuizActivity">
-
+        <activity android:name=".SoloQuizActivity"
+            android:windowSoftInputMode="adjustNothing">
         </activity>
+        <activity android:name=".DuoSettingActivity"/>
+        <activity android:name=".DuoQuizActivity"/>
+        <activity android:name=".SettingActivity"/>
     </application>
 
 </manifest>
