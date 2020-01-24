@@ -63,7 +63,7 @@ public class SoloQuizActivity extends AppCompatActivity {
     int totalName[] = new int[101];
 
     //변수
-    String name;    //인물 정답 이름
+    String urlAnswer;    //인물 정답 이름
     String decode;  //URL 인물 이름 디코드
 
     //카운트 다운 핸들러
@@ -85,6 +85,8 @@ public class SoloQuizActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(),"실패!",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                handler.removeCallbacks(runnable);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK & Intent.FLAG_ACTIVITY_CLEAR_TOP & Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }else if(pre != num ){
                 pre += 1;
@@ -219,19 +221,20 @@ public class SoloQuizActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     //이미지 불러오기
                     Log.v("*****이미지 위치*****", String.valueOf(task.getResult()));
+                    urlAnswer = String.valueOf(task.getResult());
                     String str = String.valueOf(task.getResult());
                     str = str.substring(77,str.length()-57);
                     try {
                         decode = URLDecoder.decode(str,"UTF-8");
                         Log.v("***** 디코딩 값 *****", decode);
                     } catch (UnsupportedEncodingException e) {
-                        Toast.makeText(getApplicationContext(),"ㄷㄷㄷㄷ",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"디코딩 실패",Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
                     Glide.with(SoloQuizActivity.this).load(task.getResult()).override(1024, 980).into(imageView);
 
                 }else {
-                    Toast.makeText(getApplicationContext(), "이미지 불러오기 실패!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "이미지 불러오기 실패", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -251,7 +254,11 @@ public class SoloQuizActivity extends AppCompatActivity {
                 tvProblem.setText(num + " / 10");
             }else{
                 Toast.makeText(getApplicationContext(),"실패!",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), AnswerActivity.class);
+                intent.putExtra("tvAnswer",decode);
+                intent.putExtra("urlAnswer",urlAnswer);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK & Intent.FLAG_ACTIVITY_CLEAR_TOP & Intent.FLAG_ACTIVITY_NEW_TASK);
+                handler.removeCallbacks(runnable);
                 startActivity(intent);
             }
         }

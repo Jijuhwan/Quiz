@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fire.quiz">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,22 +11,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2309895749738540~7992386571"/>
+            android:value="ca-app-pub-2309895749738540~7992386571" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-0
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SoloQuizActivity"
-            android:windowSoftInputMode="adjustNothing">
-        </activity>
-        <activity android:name=".DuoSettingActivity"/>
-        <activity android:name=".DuoQuizActivity"/>
-        <activity android:name=".SettingActivity"/>
+        <activity
+            android:name=".SoloQuizActivity"
+            android:noHistory="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".DuoSettingActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".DuoQuizActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".SettingActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".AnswerActivity"
+            android:noHistory="true"/>
     </application>
 
 </manifest>
