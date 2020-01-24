@@ -6,6 +6,19 @@
     android:orientation="vertical"
     tools:context=".SoloQuizActivity">
 
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id_for_test"
+        android:layout_gravity="center"
+        />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -25,12 +38,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15dp"
-            android:text="[출처 : 네이버 인물 검색]"/>
+            android:text="[출처 : 네이버 인물 검색]"
+            />
         <TextView
             android:id="@+id/tv_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50dp"
+            android:textSize="30dp"
             android:text="Test"
             android:textStyle="bold"
             android:textColor="#FF0000"
@@ -44,16 +58,17 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_mode"
+            android:id="@+id/tv_problem"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:textSize="30sp"
+            android:text="남은 문제"
             android:textColor="#000"
-            android:text="Solo Mode"
-            android:layout_marginTop="15sp"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"
             />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -94,15 +109,17 @@
                 android:shadowRadius="5"
                 />
         </LinearLayout>
+
         <TextView
-            android:id="@+id/tv_problem"
+            android:id="@+id/tv_mode"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"
-            android:text="남은 문제"
-            android:textColor="#000"
-            android:textSize="30sp"
             android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:text="Solo Mode"
+            android:layout_marginBottom="15sp"
             />
 
     </LinearLayout>

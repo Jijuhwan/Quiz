@@ -20,6 +20,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -52,7 +56,7 @@ public class SoloQuizActivity extends AppCompatActivity {
     TextView tvCount;
     Animation animRotate;
     TextView tvProblem;
-
+    private AdView adView;
 
     //랜덤 변수 선언
     Random rnd;
@@ -116,6 +120,47 @@ public class SoloQuizActivity extends AppCompatActivity {
 
         tvProblem = (TextView)findViewById(R.id.tv_problem);
         tvProblem.setText("1 / 10");
+
+        //AdMob 선언
+        MobileAds.initialize(this, getString(R.string.admob_app_id));
+
+        adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
+        //AdMob Code
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded(){
+                Log.d("광고 출력","onAdLoaded");
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode){
+                Log.d("광고 실패한 이유 : ","onAdFailedToLoad" + errorCode);
+            }
+
+            @Override
+            public void onAdOpened() {
+                Log.d("광고 오픈 ","onAdOpened");
+            }
+
+            @Override
+            public void onAdClicked() {
+                Log.d("광고 클릭 ","onAdClicked");
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+        });
 
         //Image num Random 설정
         rnd = new Random();
