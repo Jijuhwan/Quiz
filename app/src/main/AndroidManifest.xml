@@ -3,14 +3,20 @@
     package="com.fire.quiz">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".adapter.OsItem"></activity>
+        <activity android:name=".OpensourceActivity" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -26,10 +32,9 @@
         <activity
             android:name=".SoloQuizActivity"
             android:noHistory="true"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".DuoSettingActivity"
-            android:noHistory="true" />
+            android:name=".DuoSettingActivity" />
         <activity
             android:name=".DuoQuizActivity"
             android:noHistory="true" />
@@ -38,7 +43,7 @@
             android:noHistory="true" />
         <activity
             android:name=".AnswerActivity"
-            android:noHistory="true"/>
+            android:noHistory="true" />
     </application>
 
 </manifest>

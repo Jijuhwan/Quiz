@@ -18,13 +18,30 @@
         android:layout_gravity="center"
         />
 
+    <Button
+        android:id="@+id/btn_OS"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_main"
+
+        android:text="오픈 소스 정보"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+
+        android:shadowColor="#618C74"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
-        android:text="개발중입니다."
-        android:textSize="50dp"
-        android:gravity="center"
-        />
+        android:layout_weight="6"/>
 
 </LinearLayout>

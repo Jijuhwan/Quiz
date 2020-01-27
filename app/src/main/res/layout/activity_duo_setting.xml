@@ -19,6 +19,7 @@
         />
 
     <ImageView
+        android:id="@+id/iv_Stroage"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
@@ -26,17 +27,11 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
-        />
-    <Switch
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="O / X Mode 활성화[ON / OFF]"
-        android:textSize="20sp"
-        android:gravity="center"
+        android:layout_marginBottom="15dp"
         />
 
     <Button
+        android:id="@+id/btn_picture"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -56,6 +51,7 @@
         />
 
     <Button
+        android:id="@+id/btn_start"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
