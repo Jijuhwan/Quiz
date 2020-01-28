@@ -1,12 +1,8 @@
 package com.fire.quiz;
 
 import android.Manifest;
-import android.content.ClipData;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Path;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,11 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
+import com.fire.quiz.adapter.PictureAdapter;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -27,9 +24,7 @@ import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,14 +39,22 @@ public class DuoSettingActivity extends AppCompatActivity {
     String imageEncoded;
     List<String> imagesEncodedList;
 
+    //뷰페이저
+    private ViewPager viewPager;
+    private PictureAdapter pictureAdapter;
+
     @Override
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_duo_setting);
 
-        imgStroage = (ImageView)findViewById(R.id.iv_Stroage);
+        //imgStroage = (ImageView)findViewById(R.id.iv_Stroage);
         Button btnPicture = (Button)findViewById(R.id.btn_picture);
         Button btnStart = (Button)findViewById(R.id.btn_start);
+
+        viewPager = (ViewPager)findViewById(R.id.view);
+        pictureAdapter = new PictureAdapter(this);
+        viewPager.setAdapter(pictureAdapter);
 
         //사진 선택
         btnPicture.setOnClickListener(new View.OnClickListener() {
