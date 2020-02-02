@@ -47,6 +47,7 @@ public class AnswerActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent goMain = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(goMain);
+                finish();
             }
         });
 

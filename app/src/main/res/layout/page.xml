@@ -5,16 +5,7 @@
     android:orientation="vertical"
     >
 
-    <TextView
-        android:id="@+id/iv_Stroage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="첫번째 화면"
-        android:textStyle="bold"
-        android:textSize="50dp"
-        android:gravity="center"
-        />
-    <!--<ImageView
+    <ImageView
         android:id="@+id/iv_Stroage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,5 +15,5 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
-        />-->
+        />
 </LinearLayout>

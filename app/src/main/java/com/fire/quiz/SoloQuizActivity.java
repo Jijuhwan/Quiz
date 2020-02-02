@@ -90,6 +90,7 @@ public class SoloQuizActivity extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK & Intent.FLAG_ACTIVITY_CLEAR_TOP & Intent.FLAG_ACTIVITY_NEW_TASK);
                 handler.removeCallbacks(runnable);
                 startActivity(intent);
+                finish();
             }else if(pre != num ){
                 pre += 1;
                 count = 5;
@@ -223,7 +224,7 @@ public class SoloQuizActivity extends AppCompatActivity {
         }else if(i == 9){
             pathRef = storageRef.child("기영이.png");
         }else if(i == 10){
-            pathRef = storageRef.child("김국주.png");
+            pathRef = storageRef.child("이국주.png");
         }else if(i == 11){
             pathRef = storageRef.child("김상호.png");
         }else if(i == 12){
@@ -354,6 +355,7 @@ public class SoloQuizActivity extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK & Intent.FLAG_ACTIVITY_CLEAR_TOP & Intent.FLAG_ACTIVITY_NEW_TASK);
                 handler.removeCallbacks(runnable);
                 startActivity(intent);
+                finish();
             }
         }
     }
