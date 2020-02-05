@@ -43,6 +43,8 @@ public class OpensourceActivity extends AppCompatActivity {
         });
 
         osAdapter.addItem("Glide","https://github.com/bumptech/glide");
+        osAdapter.addItem("Icon","Icons made by <a href=\"https://www.flaticon.com/authors/pixel-perfect\" title=\"Pixel perfect\">Pixel perfect</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\"> www.flaticon.com</a>");
+        osAdapter.addItem("Icon","Icons made by <a href=\"https://www.flaticon.com/authors/pixel-perfect\" title=\"Pixel perfect\">Pixel perfect</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\"> www.flaticon.com</a>");
 
         //AdMob 선언
         MobileAds.initialize(this, getString(R.string.admob_app_id));

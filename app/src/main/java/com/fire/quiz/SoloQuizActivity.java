@@ -40,7 +40,7 @@ import java.util.Random;
 
 public class SoloQuizActivity extends AppCompatActivity {
     String flag;
-    int count = 6;  //카운트 변수
+    int count = 8;  //카운트 변수
     int num = 1; // 배열 인덱스
     int pre = 1; // 이전 인덱스 값 체크
 
@@ -72,7 +72,7 @@ public class SoloQuizActivity extends AppCompatActivity {
         @Override
         public void run() {
             //카운트 다운
-            if(count == 6){
+            if(count == 8){
                 pre = num;
                 quiz(totalName[num]);
                 tvCount.setText("게임 시작!");
@@ -93,7 +93,7 @@ public class SoloQuizActivity extends AppCompatActivity {
                 finish();
             }else if(pre != num ){
                 pre += 1;
-                count = 5;
+                count = 7;
                 quiz(totalName[num]);
                 tvCount.setText(count + "");
                 tvCount.startAnimation(animRotate);

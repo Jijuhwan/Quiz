@@ -1,18 +1,23 @@
 package com.fire.quiz.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.fire.quiz.MainActivity;
 import com.fire.quiz.R;
 
 public class PictureAdapter extends PagerAdapter {
-
     // LayoutInflater 서비스 사용을 위한 Context 참조 저장.
     private Context mContext = null ;
 
@@ -34,8 +39,9 @@ public class PictureAdapter extends PagerAdapter {
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.page, container, false);
 
-            TextView textView = (TextView) view.findViewById(R.id.iv_Stroage) ;
-            textView.setText("TEXT " + position) ;
+            ImageView imgStroage = (ImageView) view.findViewById(R.id.iv_Stroage);
+            imgStroage.setImageURI((Uri) MainActivity.uri.get(position));
+
         }
 
         // 뷰페이저에 추가.
@@ -53,7 +59,7 @@ public class PictureAdapter extends PagerAdapter {
     @Override
     public int getCount() {
         // 전체 페이지 수는 10개로 고정.
-        return 10;
+        return MainActivity.uri.size();
     }
 
     @Override

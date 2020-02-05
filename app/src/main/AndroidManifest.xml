@@ -5,8 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
 
     <application
         android:allowBackup="true"
@@ -15,26 +17,31 @@
         android:roundIcon="@mipmap/ic"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".adapter.OsItem"></activity>
-        <activity android:name=".OpensourceActivity" />
-
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2309895749738540~7992386571" />
-
-        <activity android:name=".MainActivity">
+        <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".adapter.OsItem" />
+        <activity android:name=".OpensourceActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2309895749738540~7992386571" />
+
+        <activity
+            android:name=".MainActivity"
+           >
+        </activity>
         <activity
             android:name=".SoloQuizActivity"
             android:noHistory="true"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".DuoSettingActivity" />
+            android:name=".DuoSettingActivity"
+            android:noHistory="true" />
         <activity
             android:name=".DuoQuizActivity"
             android:noHistory="true" />

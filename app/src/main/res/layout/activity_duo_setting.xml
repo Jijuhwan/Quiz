@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id_for_test"
+        ads:adUnitId="@string/banner_ad_unit_id"
         android:layout_gravity="center"
         />
 
@@ -28,11 +28,11 @@
         />
 
     <Button
-        android:id="@+id/btn_picture"
+        android:id="@+id/btn_start"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="사진 선택"
+        android:text="게임 시작"
         android:background="@drawable/button_main"
 
         android:textColor="#FFFFFF"
@@ -48,11 +48,11 @@
         />
 
     <Button
-        android:id="@+id/btn_start"
+        android:id="@+id/btn_duomain"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="게임 시작"
+        android:text="메인 화면"
         android:background="@drawable/button_main"
 
         android:textColor="#FFFFFF"
